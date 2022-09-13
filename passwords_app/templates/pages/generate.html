@@ -1,0 +1,41 @@
+{% extends "layouts/layout.html" %}
+
+{% block content %}
+
+<div class="w-full">
+    <div class="px-8 py-8 max-w-6xl mx-auto">
+        <form action="" class="mx-auto max-w-xl">
+            <section class="bg-white rounded-lg px-8 py-4 space-y-8">
+                <div class="flex flex-col space-y-4">
+                    <label for="lenght">Characters lenght</label>
+                    <select name="lenght" id="lenght">
+                        <option value="8">8 Characters</option>
+                        <option value="9">9 Characters</option>
+                        <option value="10">10 Caharacters</option>
+                        <option value="11">11 Characters</option>
+                        <option value="12">12 Characters</option>
+                        <option value="13">13 Characters</option>
+                        <option value="14">14 Characters</option>
+                        <option value="15">15 Characters</option>
+                    </select>
+                </div>
+                <div class="">
+                    <label for="uppercase">Add uppercase characters</label>
+                    <input type="checkbox" id="uppercase" name="uppercase" />
+                </div>
+                <div class="">
+                    <label for="special">Add special characters</label>
+                    <input type="checkbox" id="special" name="special" />
+                </div>
+                <div class="">
+                    <label for="numbers">Add numbers</label>
+                    <input type="checkbox" id="numbers" name="numbers" />
+                </div>
+            </section>
+
+            <button>Generate password</button>
+        </form>
+    </divc>
+</div>
+
+{% endblock %}

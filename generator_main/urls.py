@@ -19,5 +19,6 @@ from passwords_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home)
+    path('', views.home),
+    path('generate', views.generate, name="generate"),
 ]
