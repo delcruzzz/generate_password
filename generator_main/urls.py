@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
     path('generate', views.generate, name="generate"),
+    path('password', views.password, name="password")
 ]
