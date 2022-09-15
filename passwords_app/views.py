@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+import random
+
 # Create your views here.
 def home(request):
     return render(request, "pages/home.html")
@@ -10,16 +12,29 @@ def generate(request):
 
 def password(request):
 
-    basic_characters = list("abcdefghijklmnopqrstuvwxyz")
-    generate_password = ""
+    ### Lógica
+    basic_characters = list('abcdefghijklmnopqrstuvwxyz')
+    generate_password = ''
 
-    ### Leer lo que viene a través de la query
-    lenght = int(request.GET.get("lenght"))
+    ## Leer lo que viene a través de la query
+    lenght =  int(request.GET.get('lenght'))
 
-    uppercase = request.GET.get("uppercase")
+    uppercase = request.GET.get('uppercase')
+    special = request.GET.get('special')
+    numbers = request.GET.get('numbers')
 
-    special = request.GET.get("special")
+    if uppercase:
+        basic_characters.extend(list('ABCDEFGHIJKLMNOPQRSTUVWXYZ'))
 
-    numbers = request.GET.get("numbers")
+    if special:
+        basic_characters.extend(list("!#$%^&*(){}[]"))
+    
+    if numbers:
+        basic_characters.extend(list("1234567890"))
 
-    return render(request, "pages/password.html")
+    ## Recorrer elementos
+    for x in range(lenght):
+        generate_password = generate_password + random.choice(basic_characters)
+
+
+    return render(request, "pages/password.html", { "password": generate_password })
