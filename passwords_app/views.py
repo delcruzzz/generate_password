@@ -16,7 +16,7 @@ def password(request):
     basic_characters = list('abcdefghijklmnopqrstuvwxyz')
     generate_password = ''
 
-    ## Leer lo que viene a través de la query
+    ### Leer lo que viene a través de la query
     lenght =  int(request.GET.get('lenght'))
 
     uppercase = request.GET.get('uppercase')
