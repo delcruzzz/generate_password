@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from passwords_app import views
-""" from passwords_manager import views """
 
 urlpatterns = [
     path('admin/', admin.site.urls),
